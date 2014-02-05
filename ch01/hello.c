@@ -1,7 +1,7 @@
 #include <stdio.h>
 
-int main()
+int main(void)
 {
-	printf("hello, 🚀\n");
+	printf("hello, \xf0\x9f\x9a\x80\n");
 	return 0;
 }
