@@ -2,7 +2,7 @@
 
 // Print Fahrenheit-Celsius table
 
-const int lower = 0;	// Range for temperatures in degress F
+const int lower = 0;	// Range for temperatures in degrees F
 const int upper = 300;
 const int step = 20;
 
