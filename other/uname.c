@@ -1,6 +1,8 @@
 // uname prints the output from the uname system call.
 
+#ifndef __APPLE__
 #define _GNU_SOURCE
+#endif
 
 #include <stdio.h>
 #include <stdlib.h>
