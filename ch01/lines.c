@@ -1,9 +1,11 @@
 #include <stdio.h>
 
-int main(void)
+/* count lines in input */
+main()
 {
-	int c;
-	int nl = 0;
+	int c, nl;
+
+	nl = 0;
 	while ((c = getchar()) != EOF)
 		if (c == '\n')
 			++nl;
