@@ -1,1 +1,1 @@
-CFLAGS=-std=c11 -Wall -Wextra -Wpedantic -g
+CFLAGS=-ansi -Wall -Wextra -Wpedantic -g
