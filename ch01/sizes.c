@@ -9,6 +9,7 @@ main()
 	DISPLAY(short);
 	DISPLAY(int);
 	DISPLAY(long);
+	/* long long is not valid in C89 */
 	DISPLAY(float);
 	DISPLAY(double);
 	DISPLAY(long double);
