@@ -13,4 +13,6 @@ main()
 	DISPLAY(float);
 	DISPLAY(double);
 	DISPLAY(long double);
+
+	return 0;
 }

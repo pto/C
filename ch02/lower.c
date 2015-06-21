@@ -1,14 +1,17 @@
 #include <stdio.h>
 
-#define do(value) printf("%c is %c\n", value, lower(value))
-
 int lower(int c);
 
-main()
+main(int argc, char *argv[])
 {
-	do('H');
-	do('h');
-	do('3');
+	if (argc != 2) {
+		printf("usage: lower <character to convert>\n");
+		return 1;
+	}
+
+	printf("%c\n", lower(argv[1][0]));
+
+	return 0;
 }
 
 /* lower: convert c to lower case; ASCII only */
