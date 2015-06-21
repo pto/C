@@ -14,7 +14,7 @@ main(int argc, char *argv[])
 	return 0;
 }
 
-/* lower: convert c to lower case; ASCII only */
+/* lower:  convert c to lower case; ASCII only */
 int lower(int c)
 {
 	if (c >= 'A' && c <= 'Z')

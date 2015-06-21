@@ -15,7 +15,7 @@ main(int argc, char *argv[])
 	return 0;
 }
 
-/* squeeze: delete all c from s */
+/* squeeze:  delete all c from s */
 void squeeze(char s[], int c)
 {
 	int i, j;

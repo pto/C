@@ -23,7 +23,7 @@ main()
 	return 0;
 }
 
-/* xgetline: read a line into s, return length */
+/* xgetline:  read a line into s, return length */
 int xgetline(char s[], int lim)
 {
 	int c, i;

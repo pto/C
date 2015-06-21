@@ -14,7 +14,7 @@ main(int argc, char *argv[])
 	return 0;
 }
 
-/* atoi: convert s to integer */
+/* atoi:  convert s to integer */
 int atoi(char s[])
 {
 	int i, n;

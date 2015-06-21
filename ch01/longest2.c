@@ -27,7 +27,7 @@ main()
 	return 0;
 }
 
-/* xgetline: specialized version */
+/* xgetline:  specialized version */
 int xgetline(void)
 {
 	int c, i;
@@ -44,7 +44,7 @@ int xgetline(void)
 	return i;
 }
 
-/* copy: specialized version */
+/* copy:  specialized version */
 void copy(void)
 {
 	int i;

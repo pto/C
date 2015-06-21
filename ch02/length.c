@@ -14,7 +14,7 @@ main(int argc, char *argv[])
 	return 0;
 }
 
-/* xstrlen: return length of s */
+/* xstrlen:  return length of s */
 int xstrlen(char s[])
 {
 	int i;

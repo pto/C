@@ -12,7 +12,7 @@ main()
 	return 0;
 }
 
-/* power: raise base to n-th power; n >= 0; version 2 */
+/* power:  raise base to n-th power; n >= 0; version 2 */
 int power(int base, int n)
 {
 	int p;

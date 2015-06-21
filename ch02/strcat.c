@@ -19,7 +19,7 @@ main(int argc, char *argv[])
 	return 0;
 }
 
-/* xstrcat: concatenate t to end of s; s must be big enough */
+/* xstrcat:  concatenate t to end of s; s must be big enough */
 void xstrcat(char s[], char t[])
 {
 	int i, j;
