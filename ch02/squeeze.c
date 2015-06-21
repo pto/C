@@ -1,20 +1,16 @@
 #include <stdio.h>
-#include <string.h>
 
 void squeeze(char s[], int c);
 
 main(int argc, char *argv[])
 {
-	char target[BUFSIZ];
-
 	if (argc != 3) {
 		printf("usage: squeeze <string to squeeze> <character to remove>\n");
 		return 1;
 	}
 
-	strncpy(target, argv[1], BUFSIZ);
-	squeeze(target, argv[2][0]);
-	printf("%s\n", target);
+	squeeze(argv[1], argv[2][0]);
+	printf("%s\n", argv[1]);
 
 	return 0;
 }
