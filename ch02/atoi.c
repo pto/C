@@ -1,15 +1,17 @@
 #include <stdio.h>
 
-#define do(value) printf("%s is %d\n", value, atoi(value))
-
 int atoi(char s[]);
 
-main()
+main(int argc, char *argv[])
 {
-	do("123");
-	do("-42");
-	do("0");
-	do("123456789");
+	if (argc != 2) {
+		printf("usage: atoi <string to convert>\n");
+		return 1;
+	}
+
+	printf("%d\n", atoi(argv[1]));
+
+	return 0;
 }
 
 /* atoi: convert s to integer */

@@ -2,9 +2,16 @@
 
 int xstrlen(char s[]);
 
-main()
+main(int argc, char *argv[])
 {
-	printf("%d\n", xstrlen("hello, world\n"));
+	if (argc != 2) {
+		printf("usage: length <string to test>\n");
+		return 1;
+	}
+
+	printf("%d\n", xstrlen(argv[1]));
+
+	return 0;
 }
 
 /* xstrlen: return length of s */
