@@ -1,1 +1,1 @@
-CFLAGS=-ansi -Wall -Wextra -Wpedantic
+CFLAGS=-ansi
