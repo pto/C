@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void xstrcat(char s[], char t[]);
+void strcat(char s[], char t[]);
 
 main(int argc, char *argv[])
 {
@@ -12,15 +12,15 @@ main(int argc, char *argv[])
 	}
 
 	buffer[0] = '\0';
-	xstrcat(buffer, argv[1]);
-	xstrcat(buffer, argv[2]);
+	strcat(buffer, argv[1]);
+	strcat(buffer, argv[2]);
 	printf("%s\n", buffer);
 
 	return 0;
 }
 
-/* xstrcat:  concatenate t to end of s; s must be big enough */
-void xstrcat(char s[], char t[])
+/* strcat:  concatenate t to end of s; s must be big enough */
+void strcat(char s[], char t[])
 {
 	int i, j;
 
