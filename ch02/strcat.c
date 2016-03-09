@@ -1,5 +1,4 @@
-/* With gcc this program reports a warning: "conflicting types for built-in 
-   function ‘strcat’". */
+/* This program prints a warning that strcat is a built-in library function. */
 #include <stdio.h>
 
 void strcat(char s[], char t[]);
