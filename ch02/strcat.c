@@ -1,3 +1,5 @@
+/* With gcc this program reports a warning: "conflicting types for built-in 
+   function ‘strcat’". */
 #include <stdio.h>
 
 void strcat(char s[], char t[]);
