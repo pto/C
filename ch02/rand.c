@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <time.h>
 
 int rand(void);
 void srand(unsigned int seed);
@@ -7,9 +8,11 @@ main()
 {
 	int i;
 
-	srand(42);
+	srand((int)time(NULL));
 	for (i = 0; i < 10; ++i)
 		printf("%d\n", rand());
+
+	return 0;
 }
 
 unsigned long int next = 1;
