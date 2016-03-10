@@ -1,19 +1,31 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <errno.h>
 
 int bitcount(unsigned x);
 
 main(int argc, char *argv[])
 {
+	unsigned long in_value;
 	unsigned value;
 
 	if (argc != 2) {
-		printf("usage: bitcount <value>\n");
+		fputs("usage: bitcount <value>", stderr);
 		return 1;
 	}
 
-	value = strtoul(argv[1], NULL, 0);
-	printf("%d\n", bitcount(value));
+	errno = 0;
+	value = in_value = strtoul(argv[1], NULL, 0);
+	if (value != in_value) {
+		fputs("bitcount: number too large", stderr);
+		return 1;
+	}
+	if (errno != 0) {
+		perror("bitcount");
+		return 1;
+	}
+
+	printf("0x%x has %d bits set\n", value, bitcount(value));
 
 	return 0;
 }

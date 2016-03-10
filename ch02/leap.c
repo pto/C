@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <errno.h>
 
 main(int argc, char *argv[])
 {
@@ -10,7 +11,12 @@ main(int argc, char *argv[])
 		return 1;
 	}
 
-	year = atoi(argv[1]);
+	errno = 0;
+	year = strtol(argv[1], NULL, 0);
+	if (errno != 0) {
+		perror("strtol");
+		return 1;
+	}
 
 	if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0)
 		printf("%d is a leap year\n", year);
