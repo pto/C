@@ -5,7 +5,7 @@ int lower(int c);
 main(int argc, char *argv[])
 {
 	if (argc != 2) {
-		printf("usage: lower <character to convert>\n");
+		fprintf(stderr, "usage: lower <character to convert>\n");
 		return 1;
 	}
 

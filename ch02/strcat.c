@@ -1,27 +1,32 @@
-/* This program prints a warning that strcat is a built-in library function. */
 #include <stdio.h>
+#include <string.h>
 
-void strcat(char s[], char t[]);
+void _strcat(char s[], char t[]);
 
 main(int argc, char *argv[])
 {
 	char buffer[BUFSIZ];
 
 	if (argc != 3) {
-		printf("usage: strcat <first string> <second string>\n");
+		fprintf(stderr, "usage: strcat <first string> <second string>\n");
+		return 1;
+	}
+
+	if (strlen(argv[1]) + strlen(argv[2]) > BUFSIZ-1) {
+		fprintf(stderr, "strcat: string too long\n");
 		return 1;
 	}
 
 	buffer[0] = '\0';
-	strcat(buffer, argv[1]);
-	strcat(buffer, argv[2]);
+	_strcat(buffer, argv[1]);
+	_strcat(buffer, argv[2]);
 	printf("%s\n", buffer);
 
 	return 0;
 }
 
-/* strcat:  concatenate t to end of s; s must be big enough */
-void strcat(char s[], char t[])
+/* _strcat:  concatenate t to end of s; s must be big enough */
+void _strcat(char s[], char t[])
 {
 	int i, j;
 

@@ -5,7 +5,8 @@ void squeeze(char s[], int c);
 main(int argc, char *argv[])
 {
 	if (argc != 3) {
-		printf("usage: squeeze <string to squeeze> <character to remove>\n");
+		fprintf(stderr,
+			"usage: squeeze <string to squeeze> <character to remove>\n");
 		return 1;
 	}
 

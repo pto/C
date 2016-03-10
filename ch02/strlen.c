@@ -5,7 +5,7 @@ int strlen(char s[]);
 main(int argc, char *argv[])
 {
 	if (argc != 2) {
-		printf("usage: strlen <string>\n");
+		fprintf(stderr, "usage: strlen <string>\n");
 		return 1;
 	}
 
