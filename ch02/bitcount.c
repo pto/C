@@ -10,14 +10,14 @@ main(int argc, char *argv[])
 	unsigned value;
 
 	if (argc != 2) {
-		fputs("usage: bitcount <value>", stderr);
+		fprintf(stderr, "usage: bitcount <value>\n");
 		return 1;
 	}
 
 	errno = 0;
 	value = in_value = strtoul(argv[1], NULL, 0);
 	if (value != in_value) {
-		fputs("bitcount: number too large", stderr);
+		fprintf(stderr, "bitcount: number too large");
 		return 1;
 	}
 	if (errno != 0) {
