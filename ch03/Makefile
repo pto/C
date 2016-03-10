@@ -1,1 +1,1 @@
-CFLAGS=-ansi -g -O0
+CFLAGS=-ansi
