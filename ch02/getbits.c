@@ -10,7 +10,7 @@ main(int argc, char *argv[])
 	int bits;
 
 	if (argc != 4) {
-		printf("usage: getbits <value> <position> <bit count>\n");
+		fprintf(stderr, "usage: getbits <value> <position> <bit count>\n");
 		return 1;
 	}
 
@@ -18,7 +18,9 @@ main(int argc, char *argv[])
 	position = atoi(argv[2]);
 	bits = atoi(argv[3]);
 
-	printf("0x%x\n", getbits(value, position, bits));
+	printf("%d bit%s in value 0x%x starting at position %d %s value 0x%x\n",
+		bits, (bits == 1)?"":"s", value, position, (bits == 1)?"has":"have",
+		getbits(value, position, bits));
 
 	return 0;
 }

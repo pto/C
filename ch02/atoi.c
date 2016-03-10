@@ -5,7 +5,7 @@ int atoi(char s[]);
 main(int argc, char *argv[])
 {
 	if (argc != 2) {
-		printf("usage: atoi <string to convert>\n");
+		fprintf(stderr, "usage: atoi <string to convert>\n");
 		return 1;
 	}
 
