@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+int compare(const void *a, const void *b);
 int binsearch(int x, int v[], int n);
 
 main(int argc, char *argv[])
@@ -11,31 +12,29 @@ main(int argc, char *argv[])
 	int i;
 
 	if (argc < 3) {
-		printf("usage: binsearch <target> <sorted numbers to search>\n");
+		fprintf(stderr,
+			"usage: binsearch <target> <numbers to search>\n");
 		return 1;
 	}
 	target = atoi(argv[1]);
     
 	for (i = 0; i < argc - 2; i++) {
 		if (i > BUFSIZ - 1) {
-			printf("binsearch: too many arguments\n");
+			fprintf(stderr, "binsearch: too many arguments\n");
 			return 1;
 		}
 		a[i] = atoi(argv[i + 2]);
 	}
 
-    previous = a[0];
-    for (i = 1; i < argc - 2; i++) {
-        if (a[i] < previous) {
-            printf("binsearch: array not sorted\n");
-            return 1;
-        }
-        previous = a[i];
-    }
+	qsort(a, argc - 2, sizeof a[0], compare);
 
-	printf("%d\n", binsearch(target, a, argc - 1));
+	printf("%d\n", binsearch(target, a, argc - 2));
 
 	return 0;
+}
+
+int compare(const void *a, const void *b) {
+	return *(int*)a - *(int*)b;
 }
 
 /* binsearch:  find x in v[0] <= v[1] <= ... <= v[n-1] */
