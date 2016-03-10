@@ -18,7 +18,7 @@ main(int argc, char *argv[])
 	return 0;
 }
 
-/* bitcount:  count 1 bits in n */
+/* bitcount:  count 1 bits in x */
 int bitcount(unsigned x)
 {
 	int b;
