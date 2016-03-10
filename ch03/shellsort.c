@@ -9,23 +9,25 @@ main(int argc, char *argv[])
 	int i;
 
 	if (argc < 2) {
-		printf("usage: shellsort <numbers to sort>\n");
+		fprintf(stderr, "usage: shellsort <numbers to sort>\n");
 		return 1;
 	}
+
+	if (argc - 1 > BUFSIZ) {
+		fprintf(stderr, "shellsort: too many arguments\n");
+		return 1;
+	}
+
 	for (i = 0; i < argc - 1; i++) {
-		if (i > BUFSIZ - 1) {
-			printf("shellsort: too many arguments\n");
-			return 1;
-		}
 		a[i] = atoi(argv[i + 1]);
 	}
 
 	shellsort(a, argc - 1);
 
 	for (i = 0; i < argc - 1; i++) {
-		printf("%d ", a[i]);
+		printf("%5d", a[i]);
+		putchar((i%10 == 9 || i == argc - 2)? '\n':' ');
 	}
-	printf("\n");
 
 	return 0;
 }
