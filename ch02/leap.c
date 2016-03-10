@@ -7,7 +7,7 @@ main(int argc, char *argv[])
 	int year;
 
 	if (argc != 2) {
-		printf("usage: leap <year>\n");
+		fprintf(stderr, "usage: leap <year>\n");
 		return 1;
 	}
 
