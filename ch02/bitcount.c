@@ -17,7 +17,7 @@ main(int argc, char *argv[])
 	errno = 0;
 	value = in_value = strtoul(argv[1], NULL, 0);
 	if (value != in_value) {
-		fprintf(stderr, "bitcount: number too large");
+		fprintf(stderr, "bitcount: number too large\n");
 		return 1;
 	}
 	if (errno != 0) {
