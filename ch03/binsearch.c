@@ -8,7 +8,6 @@ main(int argc, char *argv[])
 {
 	int a[BUFSIZ];
 	int target;
-    int previous;
 	int i;
 
 	if (argc < 3) {
@@ -18,13 +17,13 @@ main(int argc, char *argv[])
 	}
 	target = atoi(argv[1]);
     
-	for (i = 0; i < argc - 2; i++) {
-		if (i > BUFSIZ - 1) {
-			fprintf(stderr, "binsearch: too many arguments\n");
-			return 1;
-		}
-		a[i] = atoi(argv[i + 2]);
+	if (argc - 2 > BUFSIZ) {
+		fprintf(stderr, "binsearch: too many arguments\n");
+		return 1;
 	}
+
+	for (i = 0; i < argc - 2; i++)
+		a[i] = atoi(argv[i + 2]);
 
 	qsort(a, argc - 2, sizeof a[0], compare);
 
