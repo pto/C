@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+#pragma GCC diagnostic ignored "-Wbuiltin-declaration-mismatch"
 int strlen(char s[]);
 
 main(int argc, char *argv[])

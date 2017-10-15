@@ -1,7 +1,8 @@
 #include <stdio.h>
-#include <string.h>
 
-void _strcat(char s[], char t[]);
+#pragma GCC diagnostic ignored "-Wbuiltin-declaration-mismatch"
+void strcat(char s[], char t[]);
+int strlen(char s[]);
 
 main(int argc, char *argv[])
 {
@@ -18,15 +19,15 @@ main(int argc, char *argv[])
 	}
 
 	buffer[0] = '\0';
-	_strcat(buffer, argv[1]);
-	_strcat(buffer, argv[2]);
+	strcat(buffer, argv[1]);
+	strcat(buffer, argv[2]);
 	printf("%s\n", buffer);
 
 	return 0;
 }
 
-/* _strcat:  concatenate t to end of s; s must be big enough */
-void _strcat(char s[], char t[])
+/* strcat:  concatenate t to end of s; s must be big enough */
+void strcat(char s[], char t[])
 {
 	int i, j;
 
@@ -35,4 +36,15 @@ void _strcat(char s[], char t[])
 		i++;
 	while ((s[i++] = t[j++]) != '\0')	/* copy t */
 		;
+}
+
+/* strlen:  return length of s */
+int strlen(char s[])
+{
+	int i;
+
+	i = 0;
+	while (s[i] != '\0')
+		++i;
+	return i;
 }
