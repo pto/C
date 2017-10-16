@@ -27,12 +27,16 @@ main(int argc, char *argv[])
 
 	qsort(a, argc - 2, sizeof a[0], compare);
 
-	printf("%d\n", binsearch(target, a, argc - 2));
+	printf("Sorted: ");
+	for (i = 0; i < argc - 2; i++)
+		printf("%d ", a[i]);
+	printf("\nResult: %d\n", binsearch(target, a, argc - 2));
 
 	return 0;
 }
 
-int compare(const void *a, const void *b) {
+int compare(const void *a, const void *b)
+{
 	return *(int*)a - *(int*)b;
 }
 
