@@ -1,1 +1,1 @@
-CFLAGS=-ansi -pedantic
+CFLAGS=-ansi
