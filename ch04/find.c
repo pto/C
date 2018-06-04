@@ -21,7 +21,7 @@ main()
 }
 
 /* getline:  get line into s, return length */
-int getline(char a[], int lim)
+int getline(char s[], int lim)
 {
 	int c, i;
 
