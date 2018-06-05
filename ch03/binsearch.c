@@ -16,7 +16,7 @@ main(int argc, char *argv[])
 		return 1;
 	}
 	target = atoi(argv[1]);
-    
+
 	if (argc - 2 > BUFSIZ) {
 		fprintf(stderr, "binsearch: too many arguments\n");
 		return 1;
@@ -53,7 +53,7 @@ int binsearch(int x, int v[], int n)
 			high = mid - 1;
 		else if (x > v[mid])
 			low = mid + 1;
-		else    /* found match */
+		else	/* found match */
 			return mid;
 	}
 	return -1;   /* no match */
