@@ -8,7 +8,7 @@ main(int argc, char *argv[])
 {
 	unsigned long in_value;
 	unsigned value;
-    unsigned result;
+	unsigned result;
 
 	if (argc != 2) {
 		fprintf(stderr, "usage: bitcount <value>\n");
@@ -26,7 +26,7 @@ main(int argc, char *argv[])
 		return 1;
 	}
 
-    result = bitcount(value);
+	result = bitcount(value);
 	printf("0x%x has %d bit%s set\n", value, result, (result==1)?"":"s");
 
 	return 0;

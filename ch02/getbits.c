@@ -18,15 +18,15 @@ main(int argc, char *argv[])
 	position = atoi(argv[2]);
 	bits = atoi(argv[3]);
 
-    if (bits > position+1) {
-        fprintf(stderr, "getbits: too many bits for the position\n");
-        return 1;
-    }
+	if (bits > position+1) {
+		fprintf(stderr, "getbits: too many bits for the position\n");
+		return 1;
+	}
 
-    if (bits < 0 || position < 0) {
-        fprintf(stderr, "getbits: position and bit count cannot be negative\n");
-        return 1;
-    }
+	if (bits < 0 || position < 0) {
+		fprintf(stderr, "getbits: position and bit count cannot be negative\n");
+		return 1;
+	}
 
 	printf("%d bit%s in value 0x%x starting at position %d %s value 0x%x\n",
 		bits, (bits == 1)?"":"s", value, position, (bits == 1)?"has":"have",
