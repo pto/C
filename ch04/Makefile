@@ -1,6 +1,6 @@
 CFLAGS=-ansi -pedantic
 
-all: find
+all: find atof
 
 find: getline.o strindex.o
 
@@ -9,4 +9,4 @@ clean:
 	# use cleanall to remove executables
 
 cleanall: clean
-	rm -f find
+	rm -f find atof
